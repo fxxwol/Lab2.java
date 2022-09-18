@@ -5,7 +5,7 @@ public class Node {
     public Node prev;
     public Node next;
 
-    public Node(int data, Node prev) {
+    public Node(final int data,final  Node prev) {
         this.data = data;
         this.next = null;
         this.prev = prev;
@@ -15,7 +15,7 @@ public class Node {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(final int data) {
         this.data = data;
     }
 
@@ -23,7 +23,7 @@ public class Node {
         return prev;
     }
 
-    public void setPrev(Node prev) {
+    public void setPrev(final Node prev) {
         this.prev = prev;
     }
 
@@ -31,7 +31,7 @@ public class Node {
         return next;
     }
 
-    public void setNext(Node next) {
+    public void setNext(final Node next) {
         this.next = next;
     }
 }

@@ -6,7 +6,7 @@ public class Iter implements Iterator {
     private int index = 0;
     private Queue myQueue;
 
-    public Iter( Queue myQueue) {
+    public Iter(final Queue myQueue) {
         this.myQueue = myQueue;
     }
 
