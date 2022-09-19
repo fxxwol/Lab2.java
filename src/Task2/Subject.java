@@ -8,17 +8,17 @@ import java.util.Objects;
 public class Subject {
     private String name;
     private String teacherName;
-    private Map<Student, Integer> marks;
+    private Map<Student, List<Integer>> marks;
     private List<LocalDate> dates;
 
-    public Subject(final String name, final String teacherName, final Map<Student, Integer> marks,
+    public Subject(final String name, final String teacherName, final Map<Student, List<Integer>> marks,
                    final List<LocalDate> dates) {
         this.name = name;
         this.teacherName = teacherName;
         this.marks = marks;
         this.dates = dates;
     }
-    public Subject(final String name, final Map<Student, Integer> marks) {
+    public Subject(final String name, final Map<Student, List<Integer>> marks) {
         this.name = name;
         this.marks = marks;
     }
@@ -38,11 +38,11 @@ public class Subject {
         this.teacherName = teacherName;
     }
 
-    public Map<Student, Integer> getMarks() {
+    public Map<Student, List<Integer>> getMarks() {
         return marks;
     }
 
-    public void setMarks(final Map<Student, Integer> marks) {
+    public void setMarks(final Map<Student, List<Integer>> marks) {
         this.marks = marks;
     }
 
@@ -69,11 +69,6 @@ public class Subject {
 
     @Override
     public String toString() {
-        final StringBuilder builder = new StringBuilder();
-        builder.append(name).append(" marks:\n");
-        for (final Map.Entry<Student, Integer> item : marks.entrySet()) {
-            builder.append(item.getKey()).append(" = ").append(item.getValue()).append("/100").append('\n');
-        }
-        return builder.toString();
+        return name;
     }
 }
