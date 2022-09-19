@@ -9,16 +9,19 @@ public class Subject {
     private String name;
     private String teacherName;
     private Map<Student, Integer> marks;
-    private List<LocalDate> date;
+    private List<LocalDate> dates;
 
     public Subject(final String name, final String teacherName, final Map<Student, Integer> marks,
-                   final List<LocalDate> date) {
+                   final List<LocalDate> dates) {
         this.name = name;
         this.teacherName = teacherName;
         this.marks = marks;
-        this.date = date;
+        this.dates = dates;
     }
-
+    public Subject(final String name, final Map<Student, Integer> marks) {
+        this.name = name;
+        this.marks = marks;
+    }
     public String getName() {
         return name;
     }
@@ -44,11 +47,11 @@ public class Subject {
     }
 
     public List<LocalDate> getDate() {
-        return date;
+        return dates;
     }
 
     public void setDate(final List<LocalDate> date) {
-        this.date = date;
+        this.dates = date;
     }
 
     @Override
@@ -66,8 +69,11 @@ public class Subject {
 
     @Override
     public String toString() {
-        return "Subject{" +
-                "name='" + name +
-                '}';
+        final StringBuilder builder = new StringBuilder();
+        builder.append(name).append(" marks:\n");
+        for (final Map.Entry<Student, Integer> item : marks.entrySet()) {
+            builder.append(item.getKey()).append(" = ").append(item.getValue()).append("/100").append('\n');
+        }
+        return builder.toString();
     }
 }

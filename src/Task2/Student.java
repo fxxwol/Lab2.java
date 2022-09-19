@@ -24,7 +24,9 @@ public class Student {
     public String getSurname() {
         return surname;
     }
-
+public String getFullName(){
+        return surname + " " + name;
+}
     public void setSurname(final String surname) {
         this.surname = surname;
     }
