@@ -22,8 +22,12 @@ public class Main {
         }
         System.out.printf("List of subjects after adding 'Team work' to group IT-21:\n");
         System.out.println(university.getGroups().get(0).getSubjects());
+        System.out.println(university.getGroups().get(2).getSubjects().get(0).getMarks());
 
         AdditionalSubjectData.addDate(university.getGroups().get(1), university.getGroups().get(1).getSubjects().get(0), LocalDate.of(2022, 9, 25));
+        System.out.println(university.getGroups().get(1).getName() + ", " +
+                           university.getGroups().get(1).getSubjects().get(0).getName() +
+                           university.getGroups().get(1).getSubjects().get(0).getDate());
 
         final List<Student> unSortedStudents = new ArrayList<>(university.getGroups().get(2).getStudents());
         final List<Student> sortedStudents = SortStudent.sortStudent(university.getGroups().get(2));

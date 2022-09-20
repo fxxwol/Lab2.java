@@ -12,10 +12,5 @@ public class AdditionalSubjectData {
                 subject.getDate().add(date);
             }
         }
-        display(group, subject);
-    }
-
-    public static void display(final Group group, final Subject subject) {
-        System.out.println(group.getName() + ", " + subject.getName() + subject.getDate());
     }
 }

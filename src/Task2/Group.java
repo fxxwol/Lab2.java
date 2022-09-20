@@ -7,7 +7,6 @@ import java.util.Objects;
 public class Group {
     private String name;
     private List<Student> students;
-    private int studentsNumber;
     private List<Subject> subjects;
 
     public Group(final  String name, final List<Student> givenStudents) {
@@ -19,7 +18,6 @@ public class Group {
             }
         }
         students = newList;
-        studentsNumber = students.size();
     }
     public Group(final  String name) {
         this.name = name;
@@ -32,7 +30,6 @@ public class Group {
             }
         }
         students = newList;
-        studentsNumber = students.size();
     }
 
     public String getName() {
@@ -55,7 +52,6 @@ public class Group {
             }
         }
         students = newList;
-        studentsNumber = students.size();
     }
     public int getStudentsNumber(){
         return students.size();
@@ -86,7 +82,6 @@ public class Group {
         return "Group{" +
                 "name=" + name +
                 ", \nstudents=" + students +
-                ", \nstudentsNumber=" + studentsNumber +
                 ", \nsubjects=" + subjects +
                 "}" + "\n";
     }
